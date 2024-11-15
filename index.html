@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XmasGiftShop</title>
+    
+    <!-- Preconnect to Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Link to Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!-- External CSS file -->
+    <link rel="stylesheet" href="style.css">
+   
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Luckiest+Guy&family=Mountains+of+Christmas:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    
+</head>
+
+<body>
+    <!-- Titel -->
+    <div class="title-container">
+        <h1 class="title">Xmas Gift Shop</h1>
+    </div>
+
+    <!-- Flex container voor de inputvelden en cadeau's -->
+    <div class="flex-container">
+        <!-- Namen sectie -->
+        <div id="naam" class="namen">
+            <table>
+                <tr><td><input type="text" placeholder="naam"></td></tr>
+                <tr><td><input type="text" placeholder="naam"></td></tr>
+                <tr><td><input type="text" placeholder="naam"></td></tr>
+            </table>
+        </div>
+
+        <!-- Cadeau sectie -->
+        <div class="cadeau">
+            <table>
+                <tr>
+                    <td class="tv"><img src="tv.jpeg" alt="TV"></td>
+                    <td id='tv'><button class="add-button">+</button></td>
+                </tr>
+                <tr>
+                    <td class="shirt"><img src="shirt.jpeg" alt="Shirt"></td>
+                    <td id="shirt"><button class="add-button">+</button></td>
+                </tr>
+                
+                <tr>
+                    <td class="sok"><img src="sok.jpeg" alt="Sok"></td>
+                    <td id="sok"><button class="add-button">+</button></td>
+                </tr>
+    
+                <tr>
+                    <td><button class="save" id="save" type="submit">Save</button></td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <hr>
+
+    <!-- Resultaat sectie -->
+    <div class="resultaat-container">
+        <h5 id="resultaat" class="resultaat">Results:</h5>
+    </div>
+</body>
+
+</html>

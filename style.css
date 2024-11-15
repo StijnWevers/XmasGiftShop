@@ -1,0 +1,140 @@
+
+
+/* Apply the Mountains of Christmas font to headers and paragraphs */
+
+body {
+    font-family: 'bangers';
+    color: rgb(255, 255, 255);
+    background: url(background.jpeg) no-repeat center center fixed;
+}
+
+.title-container .title {
+    font-family: 'bangers';
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    letter-spacing: 10px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: stretch;
+    align-content: stretch;
+}
+  
+  .namen {
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+    font-family: 'bangers';
+    color: white;
+    
+}
+  
+  .cadeau {
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+    font-family: 'bangers';
+    width: 150px;
+    color: white;
+}
+
+  .cadeau img {
+    width: 150px;
+    padding-left: 50px;
+
+}
+  
+  .title-container {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+}
+
+.cadeau img {
+    width: 150px;
+
+}
+
+.save {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 50px;
+    border: black solid 2px;
+    background-color: rgb(0, 0, 0);
+    font-family: 'bangers';
+    letter-spacing: 2px;
+    color: white;
+    
+}
+
+.save:hover {
+    background-color: rgb(163, 250, 145);
+    color: black;
+    border: black solid 2px;
+}
+
+.namen input {
+    margin-right: 200px;
+    margin-top: 50px;
+    margin-bottom: 100px; /* Voeg ruimte toe tussen de invoervelden */
+    padding: 10px;       /* Optioneel, voor extra padding binnen het veld */
+    width: 100%;         /* Zorg ervoor dat het invoerveld de volledige breedte van de cel vult */
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    
+}
+
+.type-cadeau {
+    padding-left: 70px;  /* Verplaatst de tekst naar rechts */
+    
+}
+
+input::placeholder, textarea::placeholder {
+    color: #00000044;               /* Set the color of the placeholder text */
+    font-family: 'bangers';  
+    letter-spacing: 2px;
+         /* Change the font family */
+
+}
+
+input {
+    color: rgb(255, 255, 255);
+    font-family: 'bangers';
+    letter-spacing: 2px;
+    
+}
+
+.cadeau .add-button {
+    background-color: rgb(255, 255, 255);
+    color: black;
+}
+
+.cadeau .add-button:hover {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+
+.resultaat-container {
+    letter-spacing: 10px;
+    font-family: 'Bangers', sans-serif; /* Corrected font-family */
+    color: rgb(255, 255, 255);
+    font-size: 50px;
+    text-align: center;
+
+}
+
+
+
