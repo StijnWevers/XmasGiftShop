@@ -18,7 +18,7 @@
    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Luckiest+Guy&family=Mountains+of+Christmas:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Fredoka:wght@300..700&family=Luckiest+Guy&family=Mountains+of+Christmas:wght@400;700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
     
 </head>
 
@@ -28,46 +28,27 @@
         <h1 class="title">Xmas Gift Shop</h1>
     </div>
 
-    <!-- Flex container voor de inputvelden en cadeau's -->
+    
     <div class="flex-container">
-        <!-- Namen sectie -->
-        <div id="naam" class="namen">
+        
+        <div id="naam">
             <table>
-                <tr><td><input type="text" placeholder="naam"></td></tr>
-                <tr><td><input type="text" placeholder="naam"></td></tr>
-                <tr><td><input type="text" placeholder="naam"></td></tr>
+                <tr class="buttons">
+                    <td><button class="addChild" id="addChild">Add child</button></td>
+                    <td><button class="addToy" id="addToy">Add toy</button></td>
+                </tr>
             </table>
         </div>
-
-        <!-- Cadeau sectie -->
+       
         <div class="cadeau">
             <table>
-                <tr>
-                    <td class="tv"><img src="tv.jpeg" alt="TV"></td>
-                    <td id='tv'><button class="add-button">+</button></td>
-                    <p>TVs: <span id="tvCount">0</span></p>
-                </tr>
-                <tr>
-                    <td class="shirt"><img src="shirt.jpeg" alt="Shirt"></td>
-                    <td id="shirt"><button class="add-button">+</button></td>
-                    <p>shirts: <span id="shirtCount">0</span></p>
-                </tr>
-                
-                <tr>
-                    <td class="sok"><img src="sok.jpeg" alt="Sok"></td>
-                    <td id="sok"><button class="add-button">+</button></td>
-                    <p>socks: <span id="sockCount">0</span></p>
-                </tr>
-    
                 <tr>
                     <td><button class="save" id="save" type="submit">Save</button></td>
                 </tr>
             </table>
         </div>
     </div>
-
     <hr>
-
     <!-- Resultaat sectie -->
     <div class="resultaat-container">
         <h5 id="resultaat" class="resultaat">Results:</h5>
