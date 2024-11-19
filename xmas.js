@@ -1,64 +1,51 @@
-// 3 kids get christmas presents,  a tv, a shirt and socks, the presents are shown with + and - buttons which indicate how many presents they get. the results will be saved in the localstorage.
+document.addEventListener('DOMContentLoaded', () => {
+    const nameInputs = document.querySelectorAll('#naam input'); 
+    const saveButton = document.getElementById('save'); 
+    const resultaat = document.getElementById('resultaat'); 
+    const tvCount = document.getElementById('tvCount');
+    const shirtCount = document.getElementById('shirtCount');
+    const sockCount = document.getElementById('sockCount'); 
+    let currentKidIndex = 0; 
 
-const url = 'http://localhost:3000/posts'; //geen server
+    const presents = [
+        { name: 'tv', quantity: 0 },
+        { name: 'shirt', quantity: 0 },
+        { name: 'sock', quantity: 0 }
+    ];
 
-const kids = ['kid1', 'kid2', 'kid3'];
-let currentkid = getElementById('currentkid');
-let save = document.getElementById('save');
-let index = 0;
-let resultaat = document.getElementById('resultaat');
-
-
-const presents = [
-    { name: 'tv', quantity: 0},
-    { name:'shirt', quantity: 0},
-    { name:'sock', quantity: 0}
-]
-
-function updateOutput(){
-    resultaat.innerHTML = '';
-}
-
-const add = document.getElementById('button');
-add.onclick = () => {
-    if (index == 0) {
-        presents[0].quantity +=1;
+    function updateCounters() {
+        tvCount.textContent = presents[0].quantity;
+        shirtCount.textContent = presents[1].quantity;
+        sockCount.textContent = presents[2].quantity;
     }
-    else if (index == 1) {
-        presents[1].quantity += 1;
-    }
-    else if (index == 2) {
-        presents[2].quantity += 1;
-    }
-    updateOutput();
-}
 
-const subtract = document.getElementById('button');
-subtract.onclick = () => { 
-    if (index == 0) {
-        presents[0].quantity -= 1;
-    }
-    else if (index == 1) {
-        presents[1].quantity -= 1;
-    }
-    else if (index == 2) {
-        presents[2].quantity -= 1;
-    }
-    updateOutput();
-}
+    document.querySelectorAll('.add-button').forEach((button, index) => {
+        button.addEventListener('click', () => {
+            presents[index].quantity++;
+            updateCounters();
+        });
+    });
 
-//de save knop moet aangepast worden 
+    saveButton.addEventListener('click', () => {
+        if (currentKidIndex < nameInputs.length) {
+            const kidName = nameInputs[currentKidIndex].value || `Kid ${currentKidIndex + 1}`;
+            const kidData = {
+                tv: presents[0].quantity,
+                shirt: presents[1].quantity,
+                sock: presents[2].quantity
+            };
 
-function saveData() {
-    if (currentkid < kids.length) {
-        resultaat.innerHTML = `<p>${presents[1].quantity} tv's, ${presents[2].quantity} t-shirts, and ${presents[3].quantity} zokken for ${kids[currentkid]}</p> `
-        currentkid++;
-        //werkt niet
-    }
-    
-}
+            localStorage.setItem(kidName, JSON.stringify(kidData));
 
+            const resultText = `${kidName} gets ${presents[0].quantity} TV(s), ${presents[1].quantity} shirt(s), and ${presents[2].quantity} sock(s).`;
 
+            const resultElement = document.createElement('p');
+            resultElement.textContent = resultText;
+            resultaat.appendChild(resultElement);
 
-
-
+            presents.forEach(present => (present.quantity = 0));
+            updateCounters();
+            currentKidIndex++;
+        }
+    });
+});
