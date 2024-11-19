@@ -94,6 +94,11 @@ body {
     background-color: rgba(255, 255, 255, 0.2);
     
 }
+.addChild {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-family: 'fredoka';
+}
 
 
 .addChild {
@@ -217,4 +222,40 @@ input {
 }
 
 
+.min-button:hover {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
 
+.lijn {
+    display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
+ 
+}
+
+.counter {
+    position: absolute;
+    top: 15px;
+    left: 5px;
+}
+
+.cadeau td {
+    text-align: center; /* Zorgt dat knoppen netjes gecentreerd staan */
+}
+
+.add-button, .min-button {
+    position: static; /* Zorg dat knoppen in normale documentstroom blijven */
+    margin: 5px; /* Optionele ruimte tussen knoppen */
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border: 1px solid black;
+}
+
+.add-button:hover, .min-button:hover {
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
