@@ -40,6 +40,7 @@ class KidsManager {
             console.error('Error updating kid:', error);
         }
     }
+
     static async deleteKid(kidId) {
         try {
             const response = await fetch(`${API_URL}/${kidId}`, {
@@ -51,6 +52,7 @@ class KidsManager {
         }
     }
 }
+
 document.addEventListener('DOMContentLoaded', () => {
     const nameContainer = document.getElementById('naam');
     const saveButton = document.getElementById('save');
@@ -102,12 +104,10 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     saveButton.addEventListener('click', async () => {
-        resultaat.innerHTML = '';
-
         for (const kidRow of nameContainer.querySelectorAll('.kidRow')) {
             const nameInput = kidRow.querySelector('.childName');
             const kidName = nameInput.value.trim();
-            
+    
             const toys = Array.from(kidRow.querySelectorAll('.toyDiv'))
                 .map(container => {
                     const toyName = container.querySelector('input').value.trim();
@@ -115,15 +115,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     return toyName ? { name: toyName, quantity } : null;
                 })
                 .filter(toy => toy !== null);
-
+    
             if (kidName && toys.length) {
                 try {
                     const kidData = { name: kidName, toys };
                     const createdKid = await KidsManager.createKid(kidData);
-
+    
                     const resultText = `${kidName} gets ${toys.map(toy => `${toy.quantity} ${toy.name}(s)`).join(', ')}. HO HO HO!`;
                     const resultElement = document.createElement('p');
                     resultElement.textContent = resultText;
+
                     resultaat.appendChild(resultElement);
                 } catch (error) {
                     console.error('Error saving kid data:', error);
@@ -133,4 +134,5 @@ document.addEventListener('DOMContentLoaded', () => {
             kidRow.querySelectorAll('.toyDiv').forEach(toyDiv => toyDiv.remove());
         }
     });
+    
 });
