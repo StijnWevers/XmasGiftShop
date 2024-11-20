@@ -106,6 +106,8 @@ body {
     background-color: rgba(255, 255, 255, 0.2);
     
 }
+
+
 .addChild {
     background-color: rgba(255, 255, 255, 0);
     color: white;
@@ -192,3 +194,75 @@ input {
     background-color: rgb(0, 0, 0);
     color: white;
 }
+
+
+
+.resultTextCss {
+    font-weight: 100;
+    font-size: 35px;
+}
+.toyBox, .childBox {
+    left: 8px;
+    margin-top: 5px;
+    padding: 10px;
+    width: 250px; 
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+.toyBox input {
+    width: 100%;
+}
+
+.toyBox span, .toyBox button {
+    width: 100%;
+}
+
+.toyBox button {
+    padding: 5px;
+    margin: 5px;
+    width: 25px;
+}
+.toyDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    margin-top: 10px;
+    padding: 5px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.toyDiv button {
+    margin: 3px;
+}
+.toyDiv span {
+    margin: 3px;
+}
+
+.toyBox {
+    margin-bottom: 5px;
+    padding: 5px;
+    width: 200px;
+}
+
+
+
+button {
+    margin: 2px;
+    padding: 5px 10px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e0e0e0;
+}
+
+
+
+
+
