@@ -1,7 +1,4 @@
 
-
-/* Apply the Mountains of Christmas font to headers and paragraphs */
-
 body {
     font-family: 'fredoka'; 
     color: rgb(255, 255, 255);
@@ -11,12 +8,22 @@ body {
     
 }
 
-.title-container1 {
-    font-family: 'fredoka';
-    font-size: 50px;
-    letter-spacing: 5px;
-    color: rgb(255, 255, 255);
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.638);
+button {
+    padding: 5px 10px;
+}
+
+.kerstman {
+    height: 100px;
+    
+}
+
+.sneeuwvlokken {
+    width: 100%;
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 20%;
     
 }
 
@@ -27,75 +34,51 @@ body {
     align-items: center; /* Centreert items horizontaal */
     height: 100vh; /* Zorgt dat de container de volledige hoogte van het scherm gebruikt */
     width: 100%; /* Zorgt dat de container de volledige breedte gebruikt */
-    margin: 0; /* Verwijdert eventuele marges */
-    padding: 0; /* Verwijdert eventuele padding */
-    box-sizing: border-box;
+
+
 }
 
 .title-container {
     display: block;
-  flex-grow: 0;
-  flex-shrink: 1;
-  flex-basis: auto;
-  align-self: auto;
-  order: 0;
-}
-
-
-.tv, .shirt, .sok {
-    display: block;
-    flex-grow: 0;
     flex-shrink: 1;
     flex-basis: auto;
     align-self: auto;
-    order: 0;
-    margin-left: 300px;
-      
-}
-
-
-.save {
-    display: block;
-    flex-grow: 0;
-    flex-shrink: 1;
-    flex-basis: auto;
-    align-self: auto;
-    order: 0;
-}
-
-
-.cadeau img {
-
-    width: 150px;
-}
-
-  
-.title-container {
+    font-family: 'fredoka';
+    font-size: 20px;
+    letter-spacing: 5px;
+    color: rgb(255, 255, 255);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.638);
     display: flex;
     justify-content: center; 
     align-items: center;
+    margin-bottom: -150px;
 }
 
 
 .save {
-    
-    background-color: rgb(255, 255, 255);
-    font-family: 'bangers';
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
+    background-color: rgba(255, 255, 255, 0.392);
+    font-family: 'Fredoka';
     letter-spacing: 2px;
     color: rgb(0, 0, 0);
     
 }
 
 .save:hover {
-    background-color: rgb(0, 23, 137);
-    color: rgb(255, 255, 255);
-    border: black solid 2px;
+    background-color: rgba(255, 255, 255, 0.399);
+    color: rgb(0, 0, 0);
+    border: black solid 0.4px;
+    
 }
 
 .namen {
     font-family: 'fredoka';
     color: rgb(255, 255, 255);
-
 }
 
 .namen input {
@@ -106,7 +89,6 @@ body {
     background-color: rgba(255, 255, 255, 0.2);
     
 }
-
 
 .addChild {
     background-color: rgba(255, 255, 255, 0);
@@ -126,51 +108,29 @@ body {
 }
 
 input:placeholder, textarea::placeholder {
-    color: #00000044;               /* Set the color of the placeholder text */
+    color: #00000044;   
     font-family: 'bangers';  
     letter-spacing: 2px;
-    
     
 }
 
 input {
-    color: rgb(11, 0, 137);
+    color: rgb(0, 0, 0);
     font-family: 'fredoka';
     letter-spacing: 2px;
     
 }
 
-.cadeau .add-button {
-    background-color: rgb(255, 255, 255);
-    color: black;
-    border: 1px solid black;
-}
-
-.cadeau .add-button:hover {
-    background-color: rgb(0, 0, 0);
-    color: white;
-}
-
 .resultaat-container {
     letter-spacing: 10px;
-    font-family: 'fredoka';/* Corrected font-family */
+    font-family: 'fredoka';
     color: rgb(255, 255, 255);
     font-size: 50px;
     text-align: center;
-
+    margin-top: -250px;
+    position: static;
+    
 }
-
-.min-button {
-    background-color: rgb(255, 255, 255);
-    color: black;
-    border: 1px solid black;
-}
-
-.min-button:hover {
-    background-color: rgb(0, 0, 0);
-    color: white;
-}
-
 
 .counter {
     position: absolute;
@@ -178,23 +138,12 @@ input {
     left: 5px;
 }
 
-.cadeau td {
-    text-align: center; /* Zorgt dat knoppen netjes gecentreerd staan */
-}
 
-.add-button, .min-button {
-    position: static; /* Zorg dat knoppen in normale documentstroom blijven */
-    margin: 5px; /* Optionele ruimte tussen knoppen */
-    background-color: rgb(255, 255, 255);
-    color: black;
-    border: 1px solid black;
-}
 
 .add-button:hover, .min-button:hover {
     background-color: rgb(0, 0, 0);
     color: white;
 }
-
 
 
 .resultTextCss {
@@ -220,18 +169,12 @@ input {
     width: 100%;
 }
 
-.toyBox button {
-    padding: 5px;
-    margin: 5px;
-    width: 25px;
-}
 .toyDiv {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     margin-top: 10px;
     padding: 5px;
-    border: 1px solid black;
     border-radius: 5px;
 }
 .toyDiv button {
@@ -249,20 +192,18 @@ input {
 
 
 
-button {
-    margin: 2px;
-    padding: 5px 10px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    cursor: pointer;
+#resultaat p {
+    font-size: 25px; 
+    color: #ffffff; 
+    font-family: 'arial'; 
+    background-color: rgba(0, 0, 0, 0.13); 
+    text-align: center; 
+    padding: 10px;
+    border-radius: 10px;
+    letter-spacing: 2px;
+    
 }
 
-button:hover {
-    background-color: #e0e0e0;
+#addToy {
+    display: none;
 }
-
-
-
-
-

@@ -57,11 +57,17 @@ document.addEventListener('DOMContentLoaded', () => {
     const nameContainer = document.getElementById('naam');
     const saveButton = document.getElementById('save');
     const resultaat = document.getElementById('resultaat');
+    const addToyButton = document.getElementById('addToy'); // De knop voor speelgoed
 
+    let currentKidRow = null; // Houd de huidige kindrij bij
+
+    // Voeg een kind toe
     document.getElementById('addChild').addEventListener('click', () => {
+       
         const newKidRow = document.createElement('div');
         newKidRow.classList.add('kidRow');
-        
+        newKidRow.style.marginBottom = '10px';
+
         const newKidInput = document.createElement('input');
         newKidInput.type = 'text';
         newKidInput.placeholder = 'Naam van kind';
@@ -69,12 +75,28 @@ document.addEventListener('DOMContentLoaded', () => {
 
         newKidRow.appendChild(newKidInput);
         nameContainer.appendChild(newKidRow);
+
+        addToyButton.style.display = 'block';
+
+        document.getElementById('addChild').disabled = true;
+
+        currentKidRow = newKidRow;
     });
 
-    document.getElementById('addToy').addEventListener('click', () => {
-        const lastKidRow = nameContainer.lastElementChild;
-        if (!lastKidRow) return;
-
+    // Voeg speelgoed toe aan het laatste kind
+    addToyButton.addEventListener('click', () => {
+        if (!currentKidRow) return; // Zorg ervoor dat er een kindrij is
+    
+        // Tel het aantal speelgoeditems dat al is toegevoegd
+        const existingToys = currentKidRow.querySelectorAll('.toyDiv').length;
+    
+        // Limiteer het aantal speelgoeditems tot 4
+        if (existingToys >= 4) {
+            alert('Niemand is zo flink geweest dat die meer als 4 speelgoedjes verdiend!');
+            return; // Stop het toevoegen van meer speelgoed als het maximum is bereikt
+        }
+    
+        // Voeg speelgoed toe aan het huidige kind
         const toyDiv = document.createElement('div');
         toyDiv.classList.add('toyDiv');
         
@@ -85,22 +107,22 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const toyCounter = document.createElement('span');
         toyCounter.textContent = '0';
-
+    
         const plusButton = document.createElement('button');
         plusButton.textContent = '+';
         plusButton.addEventListener('click', () => {
             toyCounter.textContent = parseInt(toyCounter.textContent) + 1;
         });
-
+    
         const minusButton = document.createElement('button');
         minusButton.textContent = '-';
         minusButton.addEventListener('click', () => {
             const currentCount = parseInt(toyCounter.textContent);
             if (currentCount > 0) toyCounter.textContent = currentCount - 1;
         });
-
+    
         toyDiv.append(toyInput, toyCounter, plusButton, minusButton);
-        lastKidRow.appendChild(toyDiv);
+        currentKidRow.appendChild(toyDiv);
     });
 
     saveButton.addEventListener('click', async () => {
