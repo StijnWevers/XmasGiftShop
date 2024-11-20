@@ -23,51 +23,42 @@
 </head>
 
 <body>
-    <!-- Titel -->
-    <div class="title-container">
-        <h1 class="title">Xmas Gift Shop</h1>
-    </div>
-
-    
     <div class="flex-container">
-        
-        <div id="naam">
-            <table>
-                <tr>
-                    <td class="namen"><input type="text" placeholder="naam"></td>
-                </tr>
+        <div class="title-container">
+            <h1 class="title">Xmas Gift Shop</h1>
 
-                <tr>
-                    <td><button class="addChild" id="addChild">ADD</button></td>
-                </tr>
-            </table>
         </div>
-
-        
+        <div>
+            <button class="addChild" id="addChild">ADD</button>
+        </div>
+    
         <div class="cadeau">
             <table>
                 <tr>
-                    <td class="tv"><img src="tv.jpeg" alt="TV"><br>
+                    <td class="tv">
+                        <img src="tv.jpeg" alt="TV"><br>
                         <button class="add-button">+</button>
                         <button class="min-button">-</button>
                     </td>
-                    <td class="shirt"><img src="shirt.jpeg" alt="Shirt"><br>
+                    <td class="shirt">
+                        <img src="shirt.jpeg" alt="Shirt"><br>
+                    
                         <button class="add-button">+</button>
                         <button class="min-button">-</button>
                     </td>
-                    <td class="sok"><img src="sok.jpeg" alt="Sok"><br>
+                    <td class="sok">
+                        <img src="sok.jpeg" alt="Sok"><br>
                         <button class="add-button">+</button>
                         <button class="min-button">-</button>
                     </td>
                 </tr>
-
-                <tr>
-                    <td><button class="save" id="save" type="submit">Save</button></td>
-                </tr>
-
             </table>
-        
         </div>
+    
+        <div>
+            <button class="save" id="save" type="submit">Save</button>
+        </div>
+    </div>
 
         <div class="counter">
             <p id="counter1">TVs: <span id="tvCount">0</span></p>
@@ -75,7 +66,6 @@
             <p id="counter3">socks: <span id="sockCount">0</span></p>
         </div>
         
-    </div>
 
     <hr>
 

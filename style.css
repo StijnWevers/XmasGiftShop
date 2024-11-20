@@ -11,7 +11,7 @@ body {
     
 }
 
-.title-container .title {
+.title-container1 {
     font-family: 'fredoka';
     font-size: 50px;
     letter-spacing: 5px;
@@ -22,57 +22,63 @@ body {
 
 .flex-container {
     display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
-    justify-content: center;
-    align-items: center;
-    align-content: stretch;
+    flex-direction: column; /* Plaatst alle items verticaal */
+    justify-content: center; /* Centreert items verticaal */
+    align-items: center; /* Centreert items horizontaal */
+    height: 100vh; /* Zorgt dat de container de volledige hoogte van het scherm gebruikt */
+    width: 100%; /* Zorgt dat de container de volledige breedte gebruikt */
+    margin: 0; /* Verwijdert eventuele marges */
+    padding: 0; /* Verwijdert eventuele padding */
+    box-sizing: border-box;
 }
-  
-  .namen {
-    font-family: '';
-    color: rgb(255, 255, 255);
-    
-    
+
+.title-container {
+    display: block;
+  flex-grow: 0;
+  flex-shrink: 1;
+  flex-basis: auto;
+  align-self: auto;
+  order: 0;
 }
 
 
-  .cadeau {
+.tv, .shirt, .sok {
     display: block;
     flex-grow: 0;
     flex-shrink: 1;
     flex-basis: auto;
     align-self: auto;
     order: 0;
-    font-family: 'fredoka';
-    width: 150px;
-    color: white;
+    margin-left: 300px;
+      
 }
 
-  .cadeau img {
-    width: 150px;
-    padding-left: 50px;
 
+.save {
+    display: block;
+    flex-grow: 0;
+    flex-shrink: 1;
+    flex-basis: auto;
+    align-self: auto;
+    order: 0;
 }
+
+
+.cadeau img {
+
+    width: 150px;
+}
+
   
-  .title-container {
+.title-container {
     display: flex;
     justify-content: center; 
     align-items: center;
 }
 
-.cadeau img {
-    width: 150px;
-
-}
 
 .save {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 200px;
-    height: 50px;
-    border: black solid 2px;
+    
     background-color: rgb(255, 255, 255);
     font-family: 'bangers';
     letter-spacing: 2px;
@@ -86,18 +92,30 @@ body {
     border: black solid 2px;
 }
 
+.namen {
+    font-family: 'fredoka';
+    color: rgb(255, 255, 255);
+
+}
+
 .namen input {
-    padding: 10px;       /* Optioneel, voor extra padding binnen het veld */
-    width: 150%;         /* Zorg ervoor dat het invoerveld de volledige breedte van de cel vult */
+    padding: 10px;      
+    width: 150%;   
     box-sizing: border-box;
     border-radius: 10px;
     background-color: rgba(255, 255, 255, 0.2);
     
 }
 .addChild {
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0);
     color: white;
     font-family: 'fredoka';
+    border: 0.5px solid black;
+}
+
+.addChild:hover {
+    background-color: rgb(0, 0, 0);
+    color: white;
 }
 
 .type-cadeau {
@@ -105,7 +123,7 @@ body {
     
 }
 
-input::placeholder, textarea::placeholder {
+input:placeholder, textarea::placeholder {
     color: #00000044;               /* Set the color of the placeholder text */
     font-family: 'bangers';  
     letter-spacing: 2px;
@@ -133,7 +151,7 @@ input {
 
 .resultaat-container {
     letter-spacing: 10px;
-    font-family: 'Bangers', sans-serif; /* Corrected font-family */
+    font-family: 'fredoka';/* Corrected font-family */
     color: rgb(255, 255, 255);
     font-size: 50px;
     text-align: center;
@@ -151,15 +169,6 @@ input {
     color: white;
 }
 
-.lijn {
-    display: block;
-  flex-grow: 0;
-  flex-shrink: 1;
-  flex-basis: auto;
-  align-self: auto;
-  order: 0;
- 
-}
 
 .counter {
     position: absolute;
